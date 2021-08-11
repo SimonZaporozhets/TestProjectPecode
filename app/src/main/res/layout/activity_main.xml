@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".MainActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/bar_padding"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/remove"
+            android:layout_width="@dimen/bar_btn_size"
+            android:layout_height="@dimen/bar_btn_size"
+            android:layout_gravity="start"
+            android:background="@drawable/minus_bg"
+            android:translationZ="@dimen/bar_btn_z"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/bar_counter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/counter_hor_margin"
+            android:background="@drawable/counter_bg"
+            android:paddingVertical="@dimen/counter_ver_padding"
+            android:text="@string/counter_placeholder"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/counter_text_size"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add"
+            android:layout_width="@dimen/bar_btn_size"
+            android:layout_height="@dimen/bar_btn_size"
+            android:layout_gravity="end"
+            android:background="@drawable/plus_bg"
+            android:translationZ="@dimen/bar_btn_z" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

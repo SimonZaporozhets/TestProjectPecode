@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="@dimen/bar_btn_inset"
+        android:left="@dimen/bar_btn_inset"
+        android:right="@dimen/bar_btn_inset"
+        android:top="@dimen/bar_btn_inset">
+        <shape android:shape="oval">
+            <solid android:color="@color/white" />
+            <size
+                android:width="@dimen/bar_btn_bg_size"
+                android:height="@dimen/bar_btn_bg_size" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_baseline_add_24"
+        android:gravity="center" />
+</layer-list>

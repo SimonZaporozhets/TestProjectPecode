@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bar_padding">28dp</dimen>
+    <dimen name="bar_btn_size">90dp</dimen>
+    <dimen name="bar_btn_z">6dp</dimen>
+    <dimen name="counter_hor_margin">12dp</dimen>
+    <dimen name="counter_ver_padding">14dp</dimen>
+    <dimen name="counter_text_size">26sp</dimen>
+    <dimen name="notif_btn_txt_size">24sp</dimen>
+    <dimen name="notif_btn_txt_z">4dp</dimen>
+    <dimen name="counter_radius">44dp</dimen>
+    <dimen name="notification_btn_size">200dp</dimen>
+    <dimen name="bar_btn_inset">12dp</dimen>
+    <dimen name="bar_btn_bg_size">56px</dimen>
+</resources>

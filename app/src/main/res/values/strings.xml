@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestProject</string>
+    <string name="counter_placeholder">1</string>
+    <string name="notification_btn">Create new\n notification</string>
+    <string name="channel_name">Main Channel</string>
+    <string name="channel_description">The name of channel creator is Simon</string>
+</resources>
