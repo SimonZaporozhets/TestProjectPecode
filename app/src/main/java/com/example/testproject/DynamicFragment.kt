@@ -1,6 +1,7 @@
 package com.example.testproject
 
-import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,11 +42,24 @@ class DynamicFragment : Fragment() {
 
     private fun sendNotification() {
         notificationId = fragmentIndex
+
+        val notificationIntent = Intent(activity, MainActivity::class.java)
+        notificationIntent.putExtra("fragId", notificationId)
+
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(
+            context,
+            0,
+            notificationIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
         val builder = NotificationCompat.Builder(requireContext(), CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_baseline_notifications_24)
             .setContentTitle("You create a notification")
             .setContentText("Notification ${fragmentIndex + 1}")
             .setPriority(NotificationCompat.PRIORITY_MAX)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
 
         with(NotificationManagerCompat.from(requireContext())) {
             notify(fragmentIndex, builder.build())

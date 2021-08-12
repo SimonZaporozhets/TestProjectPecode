@@ -4,4 +4,5 @@
     <string name="notification_btn">Create new\n notification</string>
     <string name="channel_name">Main Channel</string>
     <string name="channel_description">The name of channel creator is Simon</string>
+    <string name="list_size">listSize</string>
 </resources>

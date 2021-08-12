@@ -25,8 +25,7 @@
             android:layout_height="@dimen/bar_btn_size"
             android:layout_gravity="start"
             android:background="@drawable/minus_bg"
-            android:translationZ="@dimen/bar_btn_z"
-            android:visibility="gone" />
+            android:translationZ="@dimen/bar_btn_z" />
 
         <TextView
             android:id="@+id/bar_counter"
