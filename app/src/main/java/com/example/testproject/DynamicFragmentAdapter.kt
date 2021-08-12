@@ -1,5 +1,6 @@
 package com.example.testproject
 
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -15,7 +16,7 @@ class DynamicFragmentAdapter(fm: FragmentActivity) : FragmentStateAdapter(fm) {
     }
 
     fun updateList(size: Int) {
-        for (x in 1..size) {
+        for (x in 2..size) {
             fragments.add(DynamicFragment())
         }
         notifyDataSetChanged()

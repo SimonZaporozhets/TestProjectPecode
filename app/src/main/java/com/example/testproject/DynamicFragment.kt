@@ -3,6 +3,7 @@ package com.example.testproject
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,9 +49,9 @@ class DynamicFragment : Fragment() {
 
         val pendingIntent: PendingIntent = PendingIntent.getActivity(
             context,
-            0,
+            notificationId,
             notificationIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT
+            0
         )
 
         val builder = NotificationCompat.Builder(requireContext(), CHANNEL_ID)

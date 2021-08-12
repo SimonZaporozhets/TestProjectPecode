@@ -1,10 +1,14 @@
 package com.example.testproject
 
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -35,11 +39,32 @@ class MainActivity : AppCompatActivity() {
         notificationManager =
             this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
+        createNotificationChannel()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+
         val fragId = intent?.getIntExtra("fragId", 0)
         fragId?.let {
             viewPager.currentItem = it
         }
+    }
 
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = getString(R.string.channel_name)
+            val descriptionText = getString(R.string.channel_description)
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel(DynamicFragment.CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+            }
+
+            notificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 
     private fun initViewPager() {
@@ -99,11 +124,10 @@ class MainActivity : AppCompatActivity() {
 
         if (listSize == 1) {
             binding.remove.visibility = GONE
+            return
         } else {
             binding.remove.visibility = VISIBLE
         }
-
-        if (listSize == 1) return
         mAdapter.updateList(listSize)
     }
 
